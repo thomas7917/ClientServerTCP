@@ -9,12 +9,12 @@ package clientservertcp_monacchia;
  * @author studente
  */
 public class ClientServerTCP_Monacchia {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Client client = new Client("Mario", "rosso");
+        if (client.connetti("localhost", 12345) == 0) {
+            client.scrivi("Ciao dal client!");
+            client.leggi();
+            client.chiudi();
+        }
     }
-    
 }
